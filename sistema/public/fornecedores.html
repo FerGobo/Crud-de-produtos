@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fornecedores</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background: #f5f6fa; }
+    .box-container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      padding: 2.5rem 2rem;
+    }
+    .table thead th { color: #4285f4; }
+    .campo-editavel {
+      border: 1px solid transparent;
+      border-radius: 6px;
+      padding: 4px 8px;
+      min-width: 80px;
+      background: transparent;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .campo-editavel:focus {
+      outline: none;
+      border-color: #4285f4;
+      background: #f0f4ff;
+    }
+    .btn-salvar  { color: #4285f4; background: none; border: none; font-size: 1.1rem; cursor: pointer; }
+    .btn-salvar:hover  { color: #1a5fe0; }
+    .btn-excluir { color: #dc3545; background: none; border: none; font-size: 1.1rem; cursor: pointer; }
+    .btn-excluir:hover { color: #a71d2a; }
+    .nav-links { display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+    .nav-links a {
+      color: #4285f4;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 8px;
+      border: 1px solid #d0d9ff;
+      transition: background 0.15s;
+    }
+    .nav-links a:hover { background: #f0f4ff; }
+    .nav-links a.active { background: #4285f4; color: #fff; border-color: #4285f4; }
+  </style>
+</head>
+<body>
+<div class="box-container">
+
+  <!-- Menu de navegação -->
+  <nav class="nav-links">
+    <a href="produtos.html">Produtos</a>
+    <a href="fornecedores.html" class="active">Fornecedores</a>
+    <a href="cesta.html">Cesta</a>
+    <a href="login.html">Sair</a>
+  </nav>
+
+  <h4 class="mb-4 text-center" style="color:#4285f4">Fornecedores</h4>
+
+  <!-- Formulário de cadastro -->
+  <div class="card mb-4 p-3 border-0 bg-light rounded-3">
+    <h6 class="mb-3 fw-bold">Novo Fornecedor</h6>
+    <form id="fornecedorForm" class="row g-2">
+      <div class="col-md-8">
+        <input type="text" class="form-control" id="fNome" placeholder="Nome *" required>
+      </div>
+      <div class="col-md-4 d-flex gap-2 align-items-center">
+        <button type="submit" class="btn btn-primary btn-sm px-4"
+                style="background:#4285f4;border:none">Cadastrar</button>
+        <span id="fornecedorMsg" class="small"></span>
+      </div>
+    </form>
+  </div>
+
+  <!-- Tabela de fornecedores -->
+  <div class="table-responsive">
+    <table class="table table-hover align-middle">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th style="width:100px">Ações</th>
+        </tr>
+      </thead>
+      <tbody id="fornecedoresTable">
+        <tr><td colspan="2" class="text-center text-muted">Carregando...</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+<script src="App/public/js/app.js"></script>
+</body>
+</html>
